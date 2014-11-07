@@ -16,6 +16,7 @@
     "qunit": "~1.15.0",
     "underscore": "~1.7.0",
     "bourbon": "~4.0.2",
-    "neat": "~1.7.0"
+    "neat": "~1.7.0",
+    "ember-cli-moment-shim": "~0.0.2"
   }
 }
