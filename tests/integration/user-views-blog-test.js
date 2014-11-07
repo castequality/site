@@ -16,7 +16,7 @@ module("Integration - Views Blog", {
 test("User views blog", function() {
   $.mockjax({
     type: "GET",
-    url: "/posts",
+    url: "/api/posts",
     status: 200,
     dataType: "json",
     responseText: {
@@ -45,14 +45,12 @@ test("User views blog", function() {
     url: /api.bigcartel.com\/castequality\/products/,
     status: 200,
     dataType: "json",
-    responseText: {
-      products: [{
-        id: 1,
-        images: [{ secure_url: "product.jpg" }],
-        status: "active",
-        url: "/product"
-      }]
-    }
+    responseText: [{
+      id: 1,
+      images: [{ secure_url: "product.jpg" }],
+      status: "active",
+      url: "/product"
+    }]
   });
 
   visit("/");

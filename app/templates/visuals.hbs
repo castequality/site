@@ -1,0 +1,11 @@
+<section class="visuals">
+  {{#each visualGroup in visualsBySource}}
+    <section {{bind-attr data-source=visualGroup.source}}>
+      {{#each visual in visualGroup.content}}
+        <article class="visual">
+          <img {{bind-attr src=visual.thumbnail}}>
+        </article>
+      {{/each}}
+    </section>
+  {{/each}}
+</section>
