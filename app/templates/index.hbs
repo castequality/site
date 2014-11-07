@@ -1,21 +1,12 @@
 <section class="blog">
   <section class="posts">
     {{#each post in posts}}
-      <article class="post">
-        <h1 class="name">
-          {{post.name}}
-          {{date post.publishedAt}}
-        </h1>
-
-        <p class="body">
-          {{{post.body}}}
-        </p>
-      </article>
+      {{blog-post post=post}}
     {{/each}}
   </section>
 
   <aside class="links">
-    <a class="product-link" {{bind-attr href=product.link}}target="_blank">
+    <a class="product-link" target="_blank" {{bind-attr href=product.link}}>
       <p class="background-text">store</p>
       <img class="hover-image" {{bind-attr src=product.image}}>
     </a>
