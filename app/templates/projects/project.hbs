@@ -1,0 +1,14 @@
+<article class="project">
+  <div class="carousel">
+    <ul class="slides">
+      {{#each photo in photos}}
+        <li>
+          <img {{bind-attr src=photo.url}}>
+        </li>
+      {{/each}}
+      <li>
+        <iframe {{bind-attr src=videoUrl}}>
+      </li>
+    </ul>
+  </div>
+</article>
