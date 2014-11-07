@@ -17,16 +17,12 @@ $visual-width: 230px;
 }
 
 .visuals {
-  section[data-source] {
+  .column {
     @include size($visual-width auto);
 
-    margin-right: $element-margin;
     display: inline-block;
     float: right;
-
-    &:first-of-type {
-      margin-right: 0;
-    }
+    margin-right: $element-margin;
 
     &:last-of-type {
       float: none;

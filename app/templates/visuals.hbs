@@ -6,7 +6,7 @@
   {{outlet "visual"}}
 
   {{#each visualGroup in visualsBySource}}
-    <section {{bind-attr data-source=visualGroup.source}}>
+    <section class="column" {{bind-attr data-source=visualGroup.source}}>
       {{#each visual in visualGroup.content}}
         <article class="visual">
           {{#link-to "visuals.visual" visual}}
