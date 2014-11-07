@@ -1,0 +1,40 @@
+$visual-width: 230px;
+
+.splashes {
+  position: relative;
+  margin-bottom: 24px;
+  text-align: center;
+  font-variant: small-caps;
+
+  iframe {
+    @include size($video-width $video-height);
+    margin-bottom: $element-margin;
+  }
+
+  .flex-control-nav {
+    bottom: -12px;
+  }
+}
+
+.visuals {
+  section[data-source] {
+    @include size($visual-width auto);
+
+    margin-right: $element-margin;
+    display: inline-block;
+    float: right;
+
+    &:first-of-type {
+      margin-right: 0;
+    }
+
+    &:last-of-type {
+      float: none;
+    }
+  }
+
+  .visual {
+    @include size(100% auto);
+    margin-bottom: $element-margin;
+  }
+}

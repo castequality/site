@@ -1,0 +1,11 @@
+.project {
+  position: relative;
+
+  iframe {
+    @include size($video-width $video-height);
+  }
+
+  img {
+    width: $video-width;
+  }
+}

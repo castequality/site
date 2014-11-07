@@ -1,0 +1,56 @@
+@mixin link-hover {
+  padding: 0;
+  img:hover {
+    opacity: 0.8;
+  }
+}
+
+.hover-container {
+  display: block;
+  position: relative;
+
+  img {
+    position: absolute;
+
+    &:last-of-type {
+      &:hover {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  width: $page-width;
+  margin: auto;
+}
+
+img {
+  background: transparent;
+  color: #fff;
+}
+
+iframe {
+  border: none;
+}
+
+.background-text {
+  position: absolute;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.paging-link {
+  display: block;
+  margin: $element-margin;
+  text-align: center;
+}
+
+a[rel^=lightbox] {
+  @include link-hover;
+}

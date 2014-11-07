@@ -1,0 +1,24 @@
+.contact {
+  text-align: center;
+  margin-bottom: $element-margin;
+
+  a {
+    @extend .header-text;
+  }
+
+  p {
+    width: 500px;
+    margin: auto;
+    line-height: 1.3em;
+  }
+
+  .brain-logo {
+    width: 300px;
+    margin: $element-margin;
+  }
+
+  .script-logo {
+    margin-top: $element-margin / 2;
+    width: 250px;
+  }
+}

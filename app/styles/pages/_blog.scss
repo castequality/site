@@ -1,0 +1,146 @@
+$links-offset: -618px;
+$links-width: 205px;
+$social-link-height: 40px;
+$social-link-margin: 15px;
+$product-link-height: 306px;
+$instagram-link-height: $links-width;
+
+time {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.posts {
+  @include size(100%);
+  @include media($medium-screen) {
+    @include size(775px 100%);
+  }
+}
+
+.fixed {
+  position: fixed;
+  margin-top: $links-offset;
+}
+
+.links {
+  display: none;
+
+  @include media($medium-screen) {
+    @include size($links-width 100%);
+    margin-bottom: $social-link-margin;
+  }
+}
+
+.blog {
+  .links {
+    float: right
+  }
+
+  .posts, .links {
+    display: inline-block;
+    margin-right: $element-margin;
+    min-height: 1px;
+
+    &:last-child {
+      margin-right: auto;
+    }
+  }
+}
+
+.blog-banner {
+  height: 568px;
+  margin-bottom: 16px;
+}
+
+.post {
+  border-top: 1px solid $medium-gray;
+
+  .name {
+    font-size: 1em;
+    margin: 0;
+  }
+
+  time {
+    margin-top: -2px;
+    float: right;
+  }
+
+  p {
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 13px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.instagram-link,
+.product-link {
+  position: relative;
+
+  p, img {
+    position: absolute;
+  }
+
+  &:hover {
+    .hover-image {
+      opacity: 0;
+    }
+  }
+}
+
+.social-links {
+  border-bottom: 1px inset rgba(0,0,0,.5);
+  padding-bottom: $element-margin;
+  margin-bottom: $element-margin;
+  overflow: hidden;
+
+  a {
+    @include link-hover;
+    @include size($social-link-height);
+
+    display: block;
+    float: left;
+    margin-right: $social-link-margin;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+
+.product-link, .instagram-link {
+  position: relative;
+  background: $base-image-color;
+  display: block;
+  width: 100%;
+  margin-bottom: $element-margin;
+
+  .background-text {
+    color: #fff;
+  }
+}
+
+.product-banner {
+  bottom: 10px;
+}
+
+.product-link {
+  height: $product-link-height;
+
+  .background-text {
+    line-height: $product-link-height;
+  }
+}
+
+.instagram-link {
+  height: $instagram-link-height;
+
+  .background-text {
+    line-height: $instagram-link-height;
+  }
+}

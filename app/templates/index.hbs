@@ -14,14 +14,15 @@
     {{/each}}
   </section>
 
-  <a class="product-link" {{bind-attr href=product.link}}target="_blank">
-    <p class="background-text">store</p>
-    <img class="hover-image" {{bind-attr src=product.image}}>
-  </a>
+  <aside class="links">
+    <a class="product-link" {{bind-attr href=product.link}}target="_blank">
+      <p class="background-text">store</p>
+      <img class="hover-image" {{bind-attr src=product.image}}>
+    </a>
 
-  <a class="instagram-link" target="_blank" {{bind-attr href=instagram.link}}>
-    <p class="background-text">instagram</p>
-    <img class="hover-image" {{bind-attr src=instagram.image}}>
-  </a>
-
+    <a class="instagram-link" target="_blank" {{bind-attr href=instagram.link}}>
+      <p class="background-text">instagram</p>
+      <img class="hover-image" {{bind-attr src=instagram.image}}>
+    </a>
+  </aside>
 </section>
