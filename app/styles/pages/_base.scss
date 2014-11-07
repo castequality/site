@@ -1,22 +1,21 @@
-@mixin link-hover {
-  padding: 0;
-  img:hover {
-    opacity: 0.8;
-  }
+body {
+  width: $page-width;
+  margin: auto;
 }
 
-.hover-container {
-  display: block;
-  position: relative;
+header nav {
+  @extend .header-text;
 
-  img {
-    position: absolute;
+  min-width: $page-width;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: $element-margin * -1;
 
-    &:last-of-type {
-      &:hover {
-        opacity: 0;
-      }
-    }
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    height: $element-margin;
+    margin: auto ($element-margin * 2);
   }
 }
 
@@ -24,18 +23,13 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  width: $page-width;
-  margin: auto;
+iframe {
+  border: none;
 }
 
 img {
   background: transparent;
   color: #fff;
-}
-
-iframe {
-  border: none;
 }
 
 .background-text {
@@ -45,12 +39,19 @@ iframe {
   width: 100%;
 }
 
+.banner {
+  margin-bottom: $element-margin;
+}
+
+.header-text {
+  font-size: 11px;
+  font-variant: small-caps;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
 .paging-link {
   display: block;
   margin: $element-margin;
   text-align: center;
-}
-
-a[rel^=lightbox] {
-  @include link-hover;
 }

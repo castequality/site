@@ -12,6 +12,7 @@ Router.map(function() {
   this.resource("visuals", function() {
     this.route("visual", { path: ":visual_id" });
   });
+  this.route("contact");
 });
 
 export default Router;

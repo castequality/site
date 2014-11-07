@@ -100,7 +100,6 @@ time {
   overflow: hidden;
 
   a {
-    @include link-hover;
     @include size($social-link-height);
 
     display: block;

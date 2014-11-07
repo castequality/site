@@ -1,0 +1,15 @@
+.hover-container {
+  display: block;
+  position: relative;
+
+  img {
+    position: absolute;
+
+    &:last-of-type {
+      &:hover {
+        opacity: 0;
+      }
+    }
+  }
+}
+
