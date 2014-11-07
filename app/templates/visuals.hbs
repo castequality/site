@@ -1,3 +1,15 @@
+<section class="splashes">
+  <div class="carousel">
+    <ul class="slides">
+      {{#each splash in splashes}}
+        <li>
+          <iframe {{bind-attr src=splash.videoUrl}}></iframe>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</section>
+
 <section class="visuals">
   {{#each visualGroup in visualsBySource}}
     <section {{bind-attr data-source=visualGroup.source}}>

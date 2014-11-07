@@ -13,7 +13,17 @@ module("Integration - Views Visuals", {
   }
 });
 
-test("User views visuals grouped by source", function() {
+test("User views splashes adn visuals grouped by source", function() {
+  $.mockjax({
+    type: "GET",
+    url: "/api/splashes",
+    status: 200,
+    dataType: "json",
+    responseText: {
+      splashes: [{ id: 1, video_url: "video.mp4" }]
+    }
+  });
+
   $.mockjax({
     type: "GET",
     url: "/api/visuals",
@@ -30,6 +40,8 @@ test("User views visuals grouped by source", function() {
   visit("/visuals");
 
   andThen(function() {
+    equal(find(".splashes iframe:first").attr("src"), "video.mp4");
+
     equal(visualWithSource("chrismulhern").attr("src"), "chrismulhern.jpg");
     equal(visualWithSource("zandertaketomo").attr("src"), "zandertaketomo.jpg");
   });
