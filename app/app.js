@@ -1,7 +1,11 @@
-import Ember from 'ember';
-import Resolver from 'ember/resolver';
-import loadInitializers from 'ember/load-initializers';
-import config from './config/environment';
+import Ember from "ember";
+import Resolver from "ember/resolver";
+import loadInitializers from "ember/load-initializers";
+import config from "./config/environment";
+
+import dateHelper from "./helpers/date";
+
+Ember.Handlebars.registerBoundHelper("date", dateHelper);
 
 Ember.MODEL_FACTORY_INJECTIONS = true;
 
