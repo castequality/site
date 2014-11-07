@@ -11,11 +11,15 @@
 </section>
 
 <section class="visuals">
+  {{outlet}}
+
   {{#each visualGroup in visualsBySource}}
     <section {{bind-attr data-source=visualGroup.source}}>
       {{#each visual in visualGroup.content}}
         <article class="visual">
-          <img {{bind-attr src=visual.thumbnail}}>
+          {{#link-to "visuals.visual" visual}}
+            <img {{bind-attr src=visual.thumbnail}}>
+          {{/link-to}}
         </article>
       {{/each}}
     </section>

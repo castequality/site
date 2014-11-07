@@ -6,7 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource("visuals");
+  this.resource("visuals", function() {
+    this.route("visual", { path: ":visual_id" });
+  });
 });
 
 export default Router;
