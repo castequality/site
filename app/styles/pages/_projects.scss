@@ -6,6 +6,6 @@
   }
 
   img {
-    width: $video-width;
+    @include size($video-width $video-height);
   }
 }

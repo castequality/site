@@ -25,10 +25,12 @@ test("User views projects", function() {
     }
   });
 
-  visit("/projects");
-
-  andThen(function() {
-    equal(find(".slides li:first img").attr("src"), "cover.jpg");
-    equal(find(".slides li:last iframe").attr("src"), "video.mp4");
-  });
+  visit("/projects").
+    then(function() {
+      equal(find(".page :first").attr("src"), "cover.jpg");
+    }).
+  click(".next").
+    then(function() {
+      equal(find(".page :first").attr("src"), "video.mp4");
+    });
 });
