@@ -26,7 +26,23 @@ test("User views blog", function() {
 
   $.mockjax({
     type: "GET",
-    url: "http://api.bigcartel.com/castequality/products",
+    url: /api.instagram.com/,
+    status: 200,
+    dataType: "jsonp",
+    responseText: {
+      data: [{
+        id: 1,
+        images: {
+          low_resolution: { url: "instagram.jpg" }
+        },
+        link: "https://instagram.com/p/1"
+      }]
+    }
+  });
+
+  $.mockjax({
+    type: "GET",
+    url: /api.bigcartel.com\/castequality\/products/,
     status: 200,
     dataType: "json",
     responseText: {
@@ -47,5 +63,8 @@ test("User views blog", function() {
 
     equal(find(".product-link img").attr("src"), "product.jpg");
     equal(find(".product-link").attr("href"), "http://store.castequality.com/product");
+
+    equal(find(".instagram-link img").attr("src"), "instagram.jpg");
+    equal(find(".instagram-link").attr("href"), "https://instagram.com/p/1");
   });
 });

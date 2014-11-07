@@ -16,6 +16,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      INSTAGRAM: {
+        client_id: "d9a94e06adaa4f059f3b4595b365a69a",
+        user: "259689659"
+
+      }
     }
   };
 
