@@ -1,5 +1,6 @@
 import startApp from "caste/tests/helpers/start-app";
 import Ember from "ember";
+import Lookbook from "caste/models/lookbook";
 /* global $ */
 
 var App;
@@ -53,6 +54,11 @@ test("User views blog", function() {
     }]
   });
 
+  Lookbook.reopenClass({
+    FIXTURES: [{ id: 1, pages: [{ url: "page-1.jpg" }] }]
+  });
+
+
   visit("/");
 
   andThen(function() {
@@ -64,5 +70,7 @@ test("User views blog", function() {
 
     equal(find(".instagram-link img").attr("src"), "instagram.jpg");
     equal(find(".instagram-link").attr("href"), "https://instagram.com/p/1");
+
+    equal(find(".lookbook img:first").attr("src"), "page-1.jpg");
   });
 });

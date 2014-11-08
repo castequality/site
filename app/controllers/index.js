@@ -4,8 +4,9 @@ import Ember from "ember";
 var computed = Ember.computed;
 
 export default Ember.ObjectController.extend({
-  queryParams: ["limit"],
+  queryParams: ["limit", "page"],
   limit: 5,
+  page: 0,
 
   activeProducts: computed.filterBy("products", "status", "active"),
 
@@ -15,6 +16,8 @@ export default Ember.ObjectController.extend({
 
     return limit < postsCount;
   }.property("postsCount", "limit"),
+
+  lookbook: computed.alias("model.lookbooks.lastObject"),
 
   postsCount: computed.alias("model.posts.length"),
 
