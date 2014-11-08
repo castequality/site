@@ -1,9 +1,9 @@
 <section class="splashes">
-  {{outlet "video"}}
+  {{look-book pages=splashes page=video}}
 </section>
 
 <section class="visuals">
-  {{outlet "visual"}}
+  {{outlet}}
 
   {{#each visualGroup in visualsBySource}}
     <section class="column" {{bind-attr data-source=visualGroup.source}}>

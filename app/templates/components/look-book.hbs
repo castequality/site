@@ -1,4 +1,8 @@
-<img class="banner blog-banner" {{bind-attr src=current.url}}>
+{{#if current.isVideo}}
+  <iframe {{bind-attr src=current.url}}>
+{{else}}
+  <img {{bind-attr src=current.url}}>
+{{/if}}
 
 <a class="previous" href="#" {{action "previous"}}>&lt</a>
 <a class="next" href="#" {{action "next"}}>&gt</a>

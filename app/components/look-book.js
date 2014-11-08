@@ -1,12 +1,8 @@
 import Ember from "ember";
 
-var computed = Ember.computed;
-
 export default Ember.Component.extend({
   classNameBindings: [":lookbook"],
   page: 0,
-
-  pages: computed.alias("lookbook.pages"),
 
   current: function() {
     var pages = this.get("pages");

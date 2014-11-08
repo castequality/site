@@ -1,6 +1,9 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
+  queryParams: ["video"],
+  video: 0,
+
   visualsBySource: function() {
     var results = [];
     var visuals = this.get("visuals");

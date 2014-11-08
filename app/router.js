@@ -12,7 +12,6 @@ Router.map(function() {
     });
   });
   this.resource("visuals", function() {
-    this.route("video", { path: "/videos/:page" });
     this.route("visual", { path: ":visual_id" });
   });
   this.route("contact");
