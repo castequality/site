@@ -4,5 +4,7 @@
   <img {{bind-attr src=current.url}}>
 {{/if}}
 
-<a class="previous" href="#" {{action "previous"}}>&lt</a>
-<a class="next" href="#" {{action "next"}}>&gt</a>
+<nav>
+  <a class="previous" href="#" {{action "previous"}}>previous</a>
+  <a class="next" href="#" {{action "next"}}>next</a>
+</nav>
