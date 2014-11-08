@@ -27,10 +27,10 @@ test("User views projects", function() {
 
   visit("/projects").
     then(function() {
-      equal(find(".page :first").attr("src"), "cover.jpg");
+      equal(find(".project img:first").attr("src"), "cover.jpg");
     }).
   click(".next").
     then(function() {
-      equal(find(".page :first").attr("src"), "video.mp4");
+      equal(find(".project iframe:first").attr("src"), "video.mp4");
     });
 });
