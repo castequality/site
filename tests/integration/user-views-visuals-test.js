@@ -13,7 +13,7 @@ module("Integration - Views Visuals", {
   }
 });
 
-test("User views splashes and visuals grouped by source", function() {
+test("User views splashes and visuals", function() {
   $.mockjax({
     type: "GET",
     url: "/api/splashes",
@@ -31,8 +31,8 @@ test("User views splashes and visuals grouped by source", function() {
     dataType: "json",
     responseText: {
       visuals: [
-        { id: 1, thumbnail: "thumb-1.jpg", photo: "1.jpg", source: "hern" },
-        { id: 2, thumbnail: "thumb-2.jpg", photo: "2.jpg", source: "walt" }
+        { id: 1, thumbnail: "thumb-1.jpg", photo: "1.jpg" },
+        { id: 2, thumbnail: "thumb-2.jpg", photo: "2.jpg" }
       ]
     }
   });
@@ -41,15 +41,11 @@ test("User views splashes and visuals grouped by source", function() {
   then(function() {
     equal(find(".splashes iframe:first").attr("src"), "video.mp4");
 
-    equal(visualWithSource("hern").attr("src"), "thumb-1.jpg");
-    equal(visualWithSource("walt").attr("src"), "thumb-2.jpg");
+    equal(find(".visuals img:first").attr("src"), "thumb-1.jpg");
+    equal(find(".visuals img:last").attr("src"), "thumb-2.jpg");
   }).
-  click("[data-source=hern] .visual:first a").
+  click(".visuals article:first a").
   then(function() {
     equal(find(".modal img").attr("src"), "1.jpg");
   });
 });
-
-function visualWithSource(source) {
-  return find("[data-source=" + source + "] img:first");
-}

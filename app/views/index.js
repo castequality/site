@@ -1,28 +1,4 @@
 import Ember from "ember";
-/* global $ */
+import Scrollable from "../mixins/scrollable";
 
-export default Ember.View.extend({
-  didInsertElement: function() {
-    var view = this;
-    $(window).bind("scroll", function() {
-      view.didScroll();
-    });
-  },
-
-  willDestroyElement: function() {
-    $(window).unbind("scroll");
-  },
-
-  didScroll: function() {
-    if(this.isScrolledToBottom()) {
-      this.get("controller").send("more");
-    }
-  },
-
-  isScrolledToBottom: function() {
-    var distanceToTop = $(document).height() - $(window).height();
-    var top = $(document).scrollTop();
-
-    return top > distanceToTop - 500;
-  }
-});
+export default Ember.View.extend(Scrollable, {});

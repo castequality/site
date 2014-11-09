@@ -1,28 +1,20 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
-  queryParams: ["video"],
+  queryParams: ["limit", "video"],
+  limit: 20,
   video: 0,
 
-  visualsBySource: function() {
-    var results = [];
-    var visuals = this.get("visuals");
+  visuals: function() {
+    var visuals = this.get("model.visuals");
+    var limit = this.get("limit");
 
-    visuals.forEach(function(visual) {
-      var source = visual.get("source");
-      var group = results.findBy("source", source);
+    return visuals.slice(0, limit);
+  }.property("model.visuals.[]", "limit"),
 
-      if(!group) {
-        group = Ember.Object.create({
-          source: source,
-          content: []
-        });
-        results.pushObject(group);
-      }
-
-      group.get("content").pushObject(visual);
-    });
-
-    return results;
-  }.property("model.visuals.@each.source")
+  actions: {
+    more: function() {
+      this.incrementProperty("limit", 20);
+    }
+  }
 });

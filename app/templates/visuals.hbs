@@ -2,18 +2,14 @@
   {{look-book pages=splashes page=video}}
 </section>
 
-<section class="visuals">
-  {{outlet}}
+{{outlet}}
 
-  {{#each visualGroup in visualsBySource}}
-    <section class="column" {{bind-attr data-source=visualGroup.source}}>
-      {{#each visual in visualGroup.content}}
-        <article class="visual">
-          {{#link-to "visuals.visual" visual}}
-            <img {{bind-attr src=visual.thumbnail}}>
-          {{/link-to}}
-        </article>
-      {{/each}}
-    </section>
+<section class="visuals">
+  {{#each visual in visuals}}
+    <article>
+      {{#link-to "visuals.visual" visual}}
+        <img {{bind-attr src=visual.thumbnail}}>
+      {{/link-to}}
+    </article>
   {{/each}}
 </section>
