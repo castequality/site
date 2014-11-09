@@ -4,7 +4,7 @@ import Scrollable from "../mixins/scrollable";
 var scheduleOnce = Ember.run.scheduleOnce;
 
 export default Ember.View.extend(Scrollable, {
-  buffer: 300,
+  buffer: 200,
 
   didInsertElement: function() {
     this.scheduleMasonry();

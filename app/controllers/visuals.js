@@ -1,9 +1,15 @@
 import Ember from "ember";
 
 export default Ember.ObjectController.extend({
-  queryParams: ["limit", "video"],
-  limit: 20,
+  queryParams: ["page", "video"],
+  page: 0,
   video: 0,
+
+  limit: function() {
+    var page = this.get("page") + 1;
+
+    return page * 30;
+  }.property("page"),
 
   visuals: function() {
     var visuals = this.get("model.visuals");
@@ -14,7 +20,7 @@ export default Ember.ObjectController.extend({
 
   actions: {
     more: function() {
-      this.incrementProperty("limit", 20);
+      this.incrementProperty("page");
     }
   }
 });
