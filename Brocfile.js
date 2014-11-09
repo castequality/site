@@ -27,5 +27,6 @@ app.import("bower_components/jquery-mockjax/jquery.mockjax.js");
 app.import("bower_components/underscore/underscore.js");
 app.import("bower_components/masonry/dist/masonry.pkgd.js");
 app.import("bower_components/imagesloaded/imagesloaded.pkgd.js");
+app.import("bower_components/jquery-waypoints/waypoints.js");
 
 module.exports = app.toTree();

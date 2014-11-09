@@ -7,7 +7,13 @@ module.exports = function(environment) {
     baseURL: "/",
     locationType: "auto",
     contentSecurityPolicy: {
-      "img-src": "'self' *.media.tumblr.com",
+      "img-src": [
+        "'self'",
+        "*.media.tumblr.com",
+        "s3.amazonaws.com",
+        "bigcartel-images.a.ssl.fastly.net",
+        "scontent-a.cdninstagram.com"
+      ].join(" "),
       "frame-src": "'self' player.vimeo.com"
     },
     EmberENV: {
