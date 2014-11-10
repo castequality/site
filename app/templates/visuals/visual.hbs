@@ -1,7 +1,3 @@
-<div class="modal">
-  <div class="modal-window">
-    <div class="modal-inner">
-      <img {{bind-attr src=photo}}>
-    </div>
-  </div>
-</div>
+{{#modal-dialog action="close"}}
+  <img {{bind-attr src=photo}}>
+{{/modal-dialog}}

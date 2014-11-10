@@ -5,5 +5,11 @@ export default Ember.Route.extend({
     var visuals = this.modelFor("visuals").visuals;
 
     return visuals.findBy("id", params.visual_id);
+  },
+
+  actions: {
+    close: function() {
+      this.transitionTo("visuals.index");
+    }
   }
 });
