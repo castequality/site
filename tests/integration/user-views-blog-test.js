@@ -27,6 +27,16 @@ test("User views blog", function() {
 
   $.mockjax({
     type: "GET",
+    url: "/api/lookbooks",
+    status: 200,
+    dataType: "json",
+    responseText: {
+      lookbooks: [{ id: 1, pages: [{ url: "page-1.jpg" }] }]
+    }
+  });
+
+  $.mockjax({
+    type: "GET",
     url: /api.instagram.com/,
     status: 200,
     dataType: "jsonp",
@@ -53,11 +63,6 @@ test("User views blog", function() {
       url: "/product"
     }]
   });
-
-  Lookbook.reopenClass({
-    FIXTURES: [{ id: 1, pages: [{ url: "page-1.jpg" }] }]
-  });
-
 
   visit("/");
 

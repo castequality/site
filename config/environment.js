@@ -12,9 +12,15 @@ module.exports = function(environment) {
         "*.media.tumblr.com",
         "s3.amazonaws.com",
         "bigcartel-images.a.ssl.fastly.net",
-        "scontent-a.cdninstagram.com"
+        "*.cdninstagram.com"
       ].join(" "),
-      "frame-src": "'self' player.vimeo.com"
+      "connect-src": [
+        "'self'",
+        "api.bigcartel.com",
+        "api.instagram.com"
+      ].join(" "),
+      "frame-src": "'self' player.vimeo.com",
+      "script-src": "'self' https://api.instagram.com"
     },
     EmberENV: {
       FEATURES: {

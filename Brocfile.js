@@ -4,9 +4,9 @@ var EmberApp = require("ember-cli/lib/broccoli/ember-app");
 
 var app = new EmberApp({
   fingerprint: {
-    enabled: true,
-    prepend: "//s3.amazonaws.com/caste-server-staging/"
+    prepend: "//d1jpp4qqv4sc2h.cloudfront.net/"
   },
+
   sassOptions: {
     includePaths: [
       "bower_components/bourbon/dist",
