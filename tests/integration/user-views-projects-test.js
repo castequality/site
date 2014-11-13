@@ -20,8 +20,11 @@ test("User views projects", function() {
     status: 200,
     dataType: "json",
     responseText: {
-      projects: [{ id: 1, photo_ids: [1], video_url: "video.mp4" }],
-      photos: [{ id: 1, url: "cover.jpg" }],
+      projects: [{
+        id: 1,
+        slug: "project-name",
+        pages: [{ url: "cover.jpg"}, { url: "video.mp4", is_video: true }]
+      }],
     }
   });
 

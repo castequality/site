@@ -1,0 +1,11 @@
+<ul class="projects">
+  {{#each project in model}}
+    <li>
+      {{#link-to "projects.project" project (query-params page=0)}}
+        {{project.numeral}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}

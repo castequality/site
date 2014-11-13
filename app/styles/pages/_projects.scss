@@ -9,3 +9,19 @@
     @include size($video-width $video-height);
   }
 }
+
+.projects {
+  width: 100%;
+  text-align: center;
+  margin-top: $element-margin;
+  margin-bottom: $element-margin;
+  font-size: 11px;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-of-type)::after {
+      content: "/";
+    }
+  }
+}
