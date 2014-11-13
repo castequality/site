@@ -6,7 +6,6 @@ var app = new EmberApp({
   fingerprint: {
     prepend: "//d1jpp4qqv4sc2h.cloudfront.net/"
   },
-
   sassOptions: {
     includePaths: [
       "bower_components/bourbon/dist",

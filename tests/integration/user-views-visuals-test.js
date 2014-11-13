@@ -13,14 +13,14 @@ module("Integration - Views Visuals", {
   }
 });
 
-test("User views splashes and visuals", function() {
+test("User views videos and visuals", function() {
   $.mockjax({
     type: "GET",
-    url: "/api/splashes",
+    url: "/api/videos",
     status: 200,
     dataType: "json",
     responseText: {
-      splashes: [{ id: 1, video_url: "video.mp4" }]
+      videos: [{ id: 1, url: "video.mp4" }]
     }
   });
 
@@ -39,7 +39,7 @@ test("User views splashes and visuals", function() {
 
   visit("/visuals").
   then(function() {
-    equal(find(".splashes iframe:first").attr("src"), "video.mp4");
+    equal(find(".videos iframe:first").attr("src"), "video.mp4");
 
     equal(find(".visuals img:first").attr("src"), "thumb-1.jpg");
     equal(find(".visuals img:last").attr("src"), "thumb-2.jpg");

@@ -23,7 +23,7 @@ test("User views projects", function() {
       projects: [{
         id: 1,
         slug: "project-name",
-        pages: [{ url: "cover.jpg"}, { url: "video.mp4", is_video: true }]
+        pages: [{ url: "cover.jpg"}, { url: "video.mp4", video: true }]
       }],
     }
   });
