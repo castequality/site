@@ -43,9 +43,5 @@ test("User views videos and visuals", function() {
 
     equal(find(".visuals img:first").attr("src"), "thumb-1.jpg");
     equal(find(".visuals img:last").attr("src"), "thumb-2.jpg");
-  }).
-  click(".visuals article:first a").
-  then(function() {
-    equal(find(".modal img").attr("src"), "1.jpg");
   });
 });

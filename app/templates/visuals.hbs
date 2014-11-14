@@ -2,14 +2,12 @@
   {{look-book pages=videos page=video}}
 </section>
 
-{{outlet}}
-
 <section class="visuals">
   {{#each visual in visuals}}
     <article>
-      {{#link-to "visuals.visual" visual}}
+      {{#light-box href=visual.photo data-lightbox="visuals" inlineImage=false}}
         <img {{bind-attr src=visual.thumbnail}}>
-      {{/link-to}}
+      {{/light-box}}
     </article>
   {{/each}}
 </section>

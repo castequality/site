@@ -20,6 +20,7 @@
     "ember-cli-moment-shim": "~0.0.2",
     "masonry": "~3.1.5",
     "imagesloaded": "~3.1.8",
-    "jquery-waypoints": "~2.0.5"
+    "jquery-waypoints": "~2.0.5",
+    "lightbox": "2.7.1"
   }
 }

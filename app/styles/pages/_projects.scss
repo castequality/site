@@ -19,6 +19,7 @@
 
   li {
     display: inline-block;
+    font-weight: bold;
 
     &:not(:last-of-type)::after {
       content: "/";
