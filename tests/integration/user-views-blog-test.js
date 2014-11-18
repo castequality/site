@@ -71,7 +71,7 @@ test("User views blog", function() {
     ok(find(".post:first .body p").text().match(/Post Body/));
 
     equal(find(".product-link img").attr("src"), "product.jpg");
-    equal(find(".product-link").attr("href"), "http://store.castequality.com/product");
+    equal(find(".product-link").attr("href"), "http://store.castequality.com");
 
     equal(find(".instagram-link img").attr("src"), "instagram.jpg");
     equal(find(".instagram-link").attr("href"), "https://instagram.com/p/1");

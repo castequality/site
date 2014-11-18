@@ -8,10 +8,5 @@ export default DS.Model.extend({
   images: attr("object"),
   image: alias("images.firstObject.secure_url"),
 
-  link: function() {
-    return "http://store.castequality.com" + this.get("url");
-  }.property("url"),
-
-  status: attr("string"),
-  url: attr("string")
+  status: attr("string")
 });
