@@ -13,10 +13,7 @@ time {
 }
 
 .posts {
-  @include size(100%);
-  @include media($medium-screen) {
-    @include size(775px 100%);
-  }
+  @include size(775px 100%);
 }
 
 .fixed {
@@ -25,12 +22,8 @@ time {
 }
 
 .links {
-  display: none;
-
-  @include media($medium-screen) {
-    @include size($links-width 100%);
-    margin-bottom: $social-link-margin;
-  }
+  @include size($links-width 100%);
+  margin-bottom: $social-link-margin;
 }
 
 .blog {
