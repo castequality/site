@@ -11,8 +11,8 @@ module.exports = function(environment) {
         "'self'",
         "*.media.tumblr.com",
         "s3.amazonaws.com",
-        "bigcartel-images.a.ssl.fastly.net",
-        "*.cdninstagram.com"
+          "bigcartel-images.a.ssl.fastly.net",
+          "*.cdninstagram.com"
       ].join(" "),
       "connect-src": [
         "'self'",
@@ -61,7 +61,9 @@ module.exports = function(environment) {
   }
 
   if (environment === "production") {
-
+    ENV.googleAnalytics = {
+      webPropertyId: "UA-38997413-1"
+    };
   }
 
   return ENV;
