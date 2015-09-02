@@ -6,14 +6,14 @@ var client_id = ENV.APP.INSTAGRAM.client_id;
 var user = ENV.APP.INSTAGRAM.user;
 
 export default DS.RESTAdapter.extend({
-  find: function() {
+  findRecord() {
     var url = "https://api.instagram.com/v1/users/" + user +
               "/media/recent/?client_id=" + client_id;
 
     return request({
       url: url,
       dataType: "jsonp"
-    }).then(function(response) {
+    }).then(response => {
       return { instagram: response.data[0] };
     });
   }

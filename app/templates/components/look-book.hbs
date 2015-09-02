@@ -1,7 +1,7 @@
 {{#if current.video}}
-  <iframe {{bind-attr src=current.url}}>
+  <iframe src="{{current.url}}"></iframe>
 {{else}}
-  <img {{bind-attr src=current.url}}>
+  <img src="{{current.url}}">
 {{/if}}
 
 <nav>

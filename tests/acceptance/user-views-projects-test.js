@@ -1,3 +1,4 @@
+import { module, test } from "qunit";
 import startApp from "caste/tests/helpers/start-app";
 import Ember from "ember";
 /* global $ */
@@ -13,7 +14,7 @@ module("Integration - Views Projects", {
   }
 });
 
-test("User views projects", function() {
+test("User views projects", assert => {
   $.mockjax({
     type: "GET",
     url: "/api/projects",
@@ -28,12 +29,15 @@ test("User views projects", function() {
     }
   });
 
-  visit("/projects").
-    then(function() {
-      equal(find(".project img:first").attr("src"), "cover.jpg");
-    }).
-  click(".next").
-    then(function() {
-      equal(find(".project iframe:first").attr("src"), "video.mp4");
-    });
+  visit("/projects");
+
+  andThen(() => {
+    assert.equal(find(".project img:first").attr("src"), "cover.jpg");
+  });
+
+  click(".next");
+
+  andThen(() => {
+    assert.equal(find(".project iframe:first").attr("src"), "video.mp4");
+  });
 });

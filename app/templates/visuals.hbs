@@ -3,10 +3,10 @@
 </section>
 
 <section class="visuals">
-  {{#each visual in visuals}}
+  {{#each visuals as |visual|}}
     <article>
       {{#light-box href=visual.photo data-lightbox="visuals" inlineImage=false}}
-        <img {{bind-attr src=visual.thumbnail}}>
+        <img src="{{visual.thumbnail}}">
       {{/light-box}}
     </article>
   {{/each}}

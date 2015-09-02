@@ -3,7 +3,7 @@ import Ember from "ember";
 
 var computed = Ember.computed;
 
-export default Ember.ObjectController.extend({
+export default Ember.Controller.extend({
   queryParams: ["limit", "page"],
   limit: 5,
   page: 0,

@@ -1,17 +1,13 @@
-import {
-  moduleForModel,
-  test
-} from "ember-qunit";
+import { test, moduleForModel } from 'ember-qunit';
 
-moduleForModel("instagram", "Instagram", {
-});
+moduleForModel('instagram');
 
-test("#image returns the low resolution image", function() {
+test('#image returns the low resolution image', function(assert) {
   var model = this.subject({
     images: {
       low_resolution: { url: "instagram.jpg" }
     }
   });
 
-  equal(model.get("image"), "instagram.jpg");
+  assert.equal(model.get('image'), 'instagram.jpg');
 });

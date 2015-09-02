@@ -1,5 +1,5 @@
 <ul class="projects">
-  {{#each project in model}}
+  {{#each model as |project|}}
     <li>
       {{#link-to "projects.project" project (query-params page=0)}}
         {{project.numeral}}
