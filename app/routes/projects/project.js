@@ -16,6 +16,14 @@ export default Ember.Route.extend({
     return project;
   },
 
+  setupController(controller, model) {
+    this._super(controller, model);
+
+    controller.setProperties({
+      project: model,
+    });
+  },
+
   serialize: function(value) {
     return { project_id: value.get("slug") };
   }

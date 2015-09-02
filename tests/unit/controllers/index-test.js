@@ -1,19 +1,13 @@
-import {
-  moduleFor,
-  test
-} from "ember-qunit";
+import { test, moduleFor } from 'ember-qunit';
 
-moduleFor("controller:index", "IndexController", {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
-});
+moduleFor('controller:index');
 
-test("#product - selects a random active product", function() {
+test('#product - selects a random active product', function(assert) {
   var controller = this.subject({
     products: [
       { id: 1, status: "active" },
       { id: 2, status: "inactive" }
     ]
   });
-  equal(controller.get("product.id"), 1);
+  assert.equal(controller.get('product.id'), 1);
 });

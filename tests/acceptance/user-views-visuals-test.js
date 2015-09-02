@@ -1,3 +1,4 @@
+import { module, test } from "qunit";
 import startApp from "caste/tests/helpers/start-app";
 import Ember from "ember";
 /* global $ */
@@ -13,7 +14,7 @@ module("Integration - Views Visuals", {
   }
 });
 
-test("User views videos and visuals", function() {
+test("User views videos and visuals", function(assert) {
   $.mockjax({
     type: "GET",
     url: "/api/videos",
@@ -39,9 +40,9 @@ test("User views videos and visuals", function() {
 
   visit("/visuals").
   then(function() {
-    equal(find(".videos iframe:first").attr("src"), "video.mp4");
+    assert.equal(find(".videos iframe:first").attr("src"), "video.mp4");
 
-    equal(find(".visuals img:first").attr("src"), "thumb-1.jpg");
-    equal(find(".visuals img:last").attr("src"), "thumb-2.jpg");
+    assert.equal(find(".visuals img:first").attr("src"), "thumb-1.jpg");
+    assert.equal(find(".visuals img:last").attr("src"), "thumb-2.jpg");
   });
 });
