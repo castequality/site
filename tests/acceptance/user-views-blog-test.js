@@ -67,16 +67,16 @@ test("User views blog", function(assert) {
   visit("/");
 
   andThen(function() {
-    assert.ok(text('.post:first .name').match(/Blog Post/));
-    assert.ok(text('.post:first .body p').match(/Post Body/));
+    assert.ok(text(".post:first .name").match(/Blog Post/));
+    assert.ok(text(".post:first .body p").match(/Post Body/));
 
-    assert.equal(src('.product-link img'), 'product.jpg');
-    assert.equal(href('.product-link'), 'http://store.castequality.com');
+    assert.equal(src(".product-link img"), "product.jpg");
+    assert.equal(href(".product-link"), "http://store.castequality.com");
 
-    assert.equal(src('.instagram-link img'), 'instagram.jpg');
-    assert.equal(href('.instagram-link'), 'https://instagram.com/p/1');
+    assert.equal(src(".instagram-link img"), "instagram.jpg");
+    assert.equal(href(".instagram-link"), "https://instagram.com/p/1");
 
-    assert.equal(src('.lookbook img:first'), 'page-1.jpg');
+    assert.equal(src(".lookbook img:first"), "page-1.jpg");
   });
 });
 
@@ -85,9 +85,9 @@ function text(selector) {
 }
 
 function src(selector) {
-  return findWithAssert(selector).attr('src');
+  return findWithAssert(selector).attr("src");
 }
 
 function href(selector) {
-  return findWithAssert(selector).attr('href');
+  return findWithAssert(selector).attr("href");
 }

@@ -2,6 +2,6 @@
 
 set -e
 
-ember build --environment "${1:-production}"
+ember build --environment "${1:-staging}"
 ember deploy:assets
 ember deploy:index
