@@ -67,15 +67,27 @@ test("User views blog", function(assert) {
   visit("/");
 
   andThen(function() {
-    assert.ok(find(".post:first .name").text().match(/Blog Post/));
-    assert.ok(find(".post:first .body p").text().match(/Post Body/));
+    assert.ok(text('.post:first .name').match(/Blog Post/));
+    assert.ok(text('.post:first .body p').match(/Post Body/));
 
-    assert.equal(find(".product-link img").attr("src"), "product.jpg");
-    assert.equal(find(".product-link").attr("href"), "http://store.castequality.com");
+    assert.equal(src('.product-link img'), 'product.jpg');
+    assert.equal(href('.product-link'), 'http://store.castequality.com');
 
-    assert.equal(find(".instagram-link img").attr("src"), "instagram.jpg");
-    assert.equal(find(".instagram-link").attr("href"), "https://instagram.com/p/1");
+    assert.equal(src('.instagram-link img'), 'instagram.jpg');
+    assert.equal(href('.instagram-link'), 'https://instagram.com/p/1');
 
-    assert.equal(find(".lookbook img:first").attr("src"), "page-1.jpg");
+    assert.equal(src('.lookbook img:first'), 'page-1.jpg');
   });
 });
+
+function text(selector) {
+  return findWithAssert(selector).text().trim();
+}
+
+function src(selector) {
+  return findWithAssert(selector).attr('src');
+}
+
+function href(selector) {
+  return findWithAssert(selector).attr('href');
+}

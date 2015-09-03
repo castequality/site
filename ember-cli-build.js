@@ -5,7 +5,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     fingerprint: {
-      prepend: "//d1jpp4qqv4sc2h.cloudfront.net/"
+      prepend: '//d1jpp4qqv4sc2h.cloudfront.net/'
     }
   });
 
@@ -21,11 +21,11 @@ module.exports = function(defaults) {
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
-  app.import("bower_components/jquery-mockjax/jquery.mockjax.js");
-  app.import("bower_components/underscore/underscore.js");
-  app.import("bower_components/masonry/dist/masonry.pkgd.js");
-  app.import("bower_components/imagesloaded/imagesloaded.pkgd.js");
-  app.import("bower_components/jquery-waypoints/waypoints.js");
+  app.import('bower_components/jquery-mockjax/jquery.mockjax.js');
+  app.import('bower_components/underscore/underscore.js');
+  app.import('bower_components/masonry/dist/masonry.pkgd.js');
+  app.import('bower_components/imagesloaded/imagesloaded.pkgd.js');
+  app.import('bower_components/jquery-waypoints/waypoints.js');
 
   return app.toTree();
 };
